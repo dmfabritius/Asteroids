@@ -121,7 +121,6 @@ void Astro::poll_events() {
             else if (u > SPACE && u < EXTENDED && playerName.length() < 10) {
                 playerName += static_cast<char>(u);
             }
-            return;
         }
         else if (gameState == GameState::PLAYING && event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::Space) {
@@ -162,8 +161,8 @@ void Astro::update() {
             e->update(); // update the heading, velocity, and/or position of the entity
             e->check_collisions();
 
-            // inactive entities are removed, but they continue to exist in memory
-            // as part of their respective asset pools and will be re-used as needed
+            // inactive entities are removed, but they continue to exist in memory as part
+            // of their respective asset pools and will be re-used as needed
             if (!e->active) entities.remove(e);
         }
 
