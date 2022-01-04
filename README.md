@@ -1,6 +1,6 @@
 # Asteroids
 
-A partial clone of the classic Asteroids arcade game created for educational purposes. A nearly identical version of the game using the same object-oriented programming structure was created five times in six different programming languages: C++, C#, Java, Python, JavaScript, and TypeScript. For comparison purposes, four different approaches were used to allow game objects to access variables/data needed throughout the game. The "best" approach depends on a number of different considerations, only some of which are even relevant for such a simple game.
+A partial clone of the classic Asteroids arcade game created for educational purposes. A nearly identical version of the game using the same object-oriented programming structure was created six times in six different programming languages: C++, C#, Java, Python, JavaScript, and TypeScript. For comparison purposes, four different approaches were used to allow game objects to access variables/data needed throughout the game. The "best" approach depends on a number of different considerations, only some of which are even relevant for such a simple game.
 
 The C++, C#, Python, and JavaScript versions have their own solution file (.sln) and can be opened with Visual Studio 2017/2019. For the Java and TypeScript versions (or any of the others), open their root folder in Visual Studio Code or your editor/IDE of choice.
 

@@ -3,7 +3,7 @@
 // there are lots of ways this could be implemented, but this seemed like fun
 
 std::string HighScores::host = "localhost:3000";
-std::string HighScores::apiUrl = "api/v1/scores?apikey=210caa35ecb9&action=";
+std::string HighScores::apiUrl = "api/v1/scores?apikey=210caa35ecb9";
 int HighScores::lowestHighScore;
 std::string HighScores::scores;
 
@@ -11,7 +11,7 @@ void HighScores::read() {
     lowestHighScore = 0;
     scores = "Loading...";
     sf::Http http(host);
-    sf::Http::Request request(apiUrl + "read");
+    sf::Http::Request request(apiUrl);
     sf::Http::Response response = http.sendRequest(request, sf::milliseconds(200));
     if (response.getStatus() == sf::Http::Response::Ok)
         parse(response.getBody());
@@ -45,8 +45,8 @@ void HighScores::parse(const std::string& scoreData) {
 
 void HighScores::write(const std::string& name, const std::string& score) {
     sf::Http http(host);
-    std::string url = apiUrl + "write&name=" + name + "&score=" + score;
-    sf::Http::Request request(url);
+    std::string url = apiUrl + "&name=" + name + "&score=" + score;
+    sf::Http::Request request(url, sf::Http::Request::Post);
     sf::Http::Response response = http.sendRequest(request, sf::milliseconds(200));
     if (response.getStatus() != sf::Http::Response::Ok)
         std::cout << "Warning: unable to save score" << std::endl;
